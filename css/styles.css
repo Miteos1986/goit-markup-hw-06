@@ -1,3 +1,7 @@
+.hide {
+  display: none;
+}
+
 /* Base Style */
 body {
   font-family: 'Roboto', sans-serif;
@@ -48,28 +52,66 @@ p {
   overflow: hidden;
 }
 
-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+.section {
+  /* Mobile */
+  padding-top: 92px;
+  padding-bottom: 92px;
+}
+@media only screen and (min-width: 768px) {
+  .section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 .container {
-  max-width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
+  /* Mobile device */
+  min-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-left: auto;
   margin-right: auto;
+
+  outline: 2px solid red;
+  outline-offset: -2px;
+}
+
+@media screen and (min-width: 768px) {
+  /* Tablet device */
+  .container {
+    min-width: 768px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  /* Desctop */
+  .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .portfolio-title,
 .team-title {
+  min-width: 162px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 72px;
+
   color: var(--NAVY-BLUE, #2e2f42);
   text-align: center;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.11;
-  /* 111.111% */
   letter-spacing: 0.02em;
+  text-transform: capitalize;
 }
 
 /* header */
@@ -257,35 +299,81 @@ section {
 
 .advantages-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px;
   justify-content: center;
 }
-
+@media only screen and (min-width: 768px) {
+  .advantages-list {
+    row-gap: 24px;
+    column-gap: 72px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .advantages-list {
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+}
 .advantages-item {
-  width: 264px;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .advantages-item {
+    max-width: 356px;
+    /* width: calc((100% - 24px) / 2); */
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .advantages-item {
+    width: 264px;
+  }
 }
 .advantages-wrapper {
-  width: 264px;
-  height: 112px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
-  border-radius: 4px;
-  border: 1px solid var(--LIGHT-SLATE, #8e8f99);
-  background-color: var(--CLOUD, #f4f4fd);
 }
 
+@media only screen and (min-width: 1158px) {
+  .advantages-wrapper {
+    width: 264px;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--LIGHT-SLATE, #8e8f99);
+    background-color: var(--CLOUD, #f4f4fd);
+  }
+}
 .advantages-icon {
 }
+@media only screen and (max-width: 1157.98px) {
+  .advantages-icon {
+    display: none;
+  }
+}
 .advantages-sutitle {
-  color: #2e2f42;
-  text-align: left;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
+  color: var(--NAVY-BLUE, #2e2f42);
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
   letter-spacing: 0.02em;
+  text-transform: capitalize;
   margin-bottom: 8px;
+}
+@media only screen and (min-width: 768px) {
+  .advantages-sutitle {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .advantages-sutitle {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
 }
 
 .advantages-p {
@@ -309,7 +397,18 @@ section {
 .team-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 72px;
+}
+@media only screen and (min-width: 768px) {
+  .team-list {
+    column-gap: 24px;
+    row-gap: 64px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .team-list {
+    gap: 24px;
+  }
 }
 
 .team-wrapper {
@@ -317,12 +416,23 @@ section {
 }
 
 .team-item {
-  width: calc((100% - 24px * 3) / 4);
+  width: 100%;
+  text-align: center;
   border-radius: 0px 0px 4px 4px;
   background: var(--WHITE, #fff);
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+@media only screen and (min-width: 768px) {
+  .team-item {
+    width: calc((100% - 24px * 2) / 2);
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .team-item {
+    width: calc((100% - 24px * 3) / 4);
+  }
 }
 
 .team-img {
