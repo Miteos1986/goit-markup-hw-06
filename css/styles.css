@@ -667,6 +667,13 @@ section {
 @media only screen and (max-width: 767.98px) {
   .footer .container {
     display: block;
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .footer .container {
+    display: flex;
+    align-items: baseline;
   }
 }
 .footer {
@@ -749,8 +756,7 @@ section {
   gap: 16px;
 }
 .footer .container {
-  display: flex;
-  align-items: baseline;
+  /*  */
 }
 /* footer form */
 .footer-wrapper-modal {
